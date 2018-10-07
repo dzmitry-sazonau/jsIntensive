@@ -20,10 +20,6 @@ for(let i = 1; i < pow; i++){
     powOp *= op;
 }
 
-// let powOpString = powOp.toString(),
-//     lengthNum = (powOpString.length)*10;
-
-// console.log(lengthNum);
 console.log("Наше число -", op);
 console.log('Число в', pow,'степени -', powOp);
 let powOpString = powOp.toString();
