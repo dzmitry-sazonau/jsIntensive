@@ -8,7 +8,7 @@ let monthExpensesOne = prompt('Введите обязательную стат�
     monthExpensesTwo = prompt('Введите обязательную статью расходов в этом месяце', ''),
     howMuchCostTwo = +prompt('Во сколько обойдется?', '');
 
-let appData = {
+let appDate = {
     budget: money,
     timeData: time,
     expenses : {
@@ -20,5 +20,5 @@ let appData = {
     savings: false
 };
 
-console.log(appData);
+console.log(appDate);
 alert(money/30);
