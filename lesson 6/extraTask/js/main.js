@@ -62,7 +62,7 @@ document.body.addEventListener('mousemove', function() {
 
 expensesBtn.addEventListener('click', function() {
     let sum = 0,
-        regVal = /^\d+$/;
+        regVal = /\d/g;
     for (let i = 0; i < expensesItem.length; i++){
         let a = expensesItem[i].value,
             b = expensesItem[++i].value;
@@ -83,7 +83,7 @@ expensesBtn.addEventListener('click', function() {
 optionalExpensesBtn.addEventListener('click', function() {
     optionalExpensesValue.textContent = ' '; 
     for( let i = 0; i < optionalExpensesItem.length; i++) {
-        let regString =/^[А-Я]$/i,
+        let regString =/^[А-Я]$/gi,
             opt = optionalExpensesItem[i].value;
 
 	    if (regString.test(opt)) {
