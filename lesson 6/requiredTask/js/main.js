@@ -52,6 +52,12 @@ document.body.addEventListener('mousemove', function() {
     } else { 
         optionalExpensesBtn.disabled = false;
     }
+
+    if (appDate.budget == undefined){
+        countBtn.disabled = true;
+    } else {
+        countBtn.disabled = false;
+    }
 });
 
 expensesBtn.addEventListener('click', function() {
