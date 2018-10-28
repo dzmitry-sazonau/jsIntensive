@@ -175,7 +175,7 @@
 					</div>
 					<form id="form">
 						<input required type="email" name="mail" placeholder="Ваша почта">
-						<input class="checkValue" required type="tel" name="phone" placeholder="Ваш телефон" if (event.which != 43 && event.which < 48 || event.which > 57) {return false;}>
+						<input class="checkValue" required type="tel" name="phone" placeholder="Ваш телефон" onkeypress="if (event.which != 43 && event.which != 8 && event.which < 48 || event.which > 57) {return false;}">
 						<button type="submit">Отправить</button>
 					</form>
 				</div>
@@ -222,7 +222,7 @@
 					<label class="popup-form__label" for="phone">
 					Введите ваш номер телефона:
 					</label>
-					<input class="popup-form__input" name="phone" type="tel" required placeholder="+7(978) 973 33 45" onkeypress="if (event.which != 43 && event.which < 48 || event.which > 57) {return false;}">
+					<input class="popup-form__input" name="phone" type="tel" required placeholder="+7(978) 973 33 45" onkeypress="if (event.which != 43 && event.which != 8 && event.which < 48 || event.which > 57) { console.log(event.which); return false; }">
 					<button class="button popup-form__btn">
 						Оставить заявку!
 					</button>
@@ -233,12 +233,14 @@
 
 	<div class="overlay fade" id="successModal">
 		<div class="popup" >
-			<div class="popup-close">&times;</div>
+			<div class="popup-close" id="closeModal">&times;</div>
 			<div class="popup-title">
 			Спасибо за заявку!
 			</div>
 			<div class="popup-form">
-				<img src="img/tenor.gif" alt="Success!">
+				<div style="display:flex;justify-content:center;align-items:center;">
+					<img src="img/Shamrock.png" alt="Success!">
+				</div>
 			</div>
 		</div>
 	</div>

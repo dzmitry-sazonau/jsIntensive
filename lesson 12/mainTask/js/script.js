@@ -123,17 +123,15 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     // Form
-    let message = {
-        loading: 'Загрузка...',
-        success: 'Спасибо! Скоро мы с вами свяжемся',
-        failure: 'Что-то пошло не так...'
-    }, 
-        form = document.querySelectorAll('form'),
-        // phoneValueMore = document.querySelector(".popup-form__input"),
-        // phoneValueForm = document.querySelector(".checkValue"),
+    let form = document.querySelectorAll('form'),
         successModal = document.querySelector('#successModal'),
-        statusMessage = document.createElement('div');
-
+        statusMessage = document.createElement('div'),
+        message = {
+            loading: 'Загрузка...',
+            success: 'Спасибо! Скоро мы с вами свяжемся',
+            failure: 'Что-то пошло не так...'
+        };
+        
     statusMessage.classList.add('status');
 
     for(let i = 0; i < form.length; i++) {
@@ -159,8 +157,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     data.forEach(function(value, key) {
                         obj[key] = value;
                     });
-                    let json = JSON.stringify(obj);
-                    
+            
                     request.addEventListener('readystatechange', function() {
                         if(request.readyState < 4) {
                             resolve();  
@@ -171,7 +168,7 @@ window.addEventListener('DOMContentLoaded', () => {
                         }
                     });
 
-                    request.send(json);
+                    request.send(JSON.stringify(obj));
                 });
             }
             
@@ -179,8 +176,15 @@ window.addEventListener('DOMContentLoaded', () => {
                 for(let i = 0; i < input.length; i++) {
                     input[i].value = '';
                 }
+                statusMessage.textContent = '';
             }
-            
+
+            let closeSuccessModal = document.querySelector('#closeModal');
+            closeSuccessModal.addEventListener('click', function() {
+                successModal.style.display = 'none';
+                more.classList.remove('more-splash');
+                document.body.style.overflow = '';
+            });
             postData(formData)
                 .then(() => statusMessage.textContent = message.loading)
                 .then(() => {
@@ -192,12 +196,5 @@ window.addEventListener('DOMContentLoaded', () => {
                 .then(clearInput)
         });
     }
-    // phoneValueMore.onkeypress = function(event) {
-    //     if (event.which != 43 && event.which < 48 || event.which > 57) {return false;}
-    // };
-    // phoneValueForm.onkeypress = function(event) {
-    //     if (event.which != 43 && event.which < 48 || event.which > 57) {return false;}
-    // };
-   
-   
+  
 });
