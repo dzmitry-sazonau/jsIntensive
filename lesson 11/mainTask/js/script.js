@@ -123,14 +123,14 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     // Form
-
     let message = {
         loading: 'Загрузка...',
         success: 'Спасибо! Скоро мы с вами свяжемся',
         failure: 'Что-то пошло не так...'
-    };
-
-    let form = document.querySelectorAll('form'),
+    }, 
+        form = document.querySelectorAll('form'),
+        //phoneValueMore = document.querySelector(".popup-form__input"),
+        //phoneValueForm = document.querySelector(".checkValue"),
         statusMessage = document.createElement('div');
     
     statusMessage.classList.add('status');
@@ -170,5 +170,12 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    // phoneValueMore.onkeypress = function(event) {
+    //     if (event.which != 43 && event.which < 48 || event.which > 57) {return false;}
+    // };
+    // phoneValueForm.onkeypress = function(event) {
+    //     if (event.which != 43 && event.which < 48 || event.which > 57) {return false;}
+    // };
+   
    
 });

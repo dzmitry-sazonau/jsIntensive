@@ -175,8 +175,8 @@
 					</div>
 					<form id="form">
 						<input required type="email" name="mail" placeholder="Ваша почта">
-						<input required type="tel" name="phone" placeholder="Ваш телефон"
-						onkeypress="if ( event.keyCode != 43 && event.keyCode < 48 || event.keyCode > 57 ) return false;">
+								<input class="popup-form__input" name="phone" type="tel" required placeholder="+7(978) 973 33 45" onkeypress="if (event.which != 43 && event.which < 48 || event.which > 57) {return false;}">
+								<input class="checkValue" required type="tel" name="phone" placeholder="Ваш телефон" onkeypress="" >
 						<button type="submit">Отправить</button>
 					</form>
 				</div>
@@ -223,8 +223,7 @@
 								<label class="popup-form__label" for="phone">
 								Введите ваш номер телефона:
 								</label>
-								<input class="popup-form__input" name="phone" type="tel" required placeholder="+7(978) 973 33 45" 
-								onkeypress="if ( event.keyCode != 43 && event.keyCode < 48 || event.keyCode > 57 ) return false;">
+								<input class="popup-form__input" name="phone" type="tel" required placeholder="+7(978) 973 33 45" onkeypress="if (event.which != 43 && event.which < 48 || event.which > 57) {return false;}">
 								<button class="button popup-form__btn">
 									Оставить заявку!
 								</button>
