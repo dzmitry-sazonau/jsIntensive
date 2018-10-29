@@ -8,13 +8,18 @@ function calc() {
         daysSum = 0,
         total = 0;
 
-    totatValue.textContent = 0;
+     totatValue.textContent = 0;
+
+    
+    function checkInput() {
+        return  (restDays.value == '' || persons.value == '' || restDays.value == 0 || persons.value == 0);
+    }   
 
     persons.addEventListener('change', function() {
         personsSum = +this.value;  
         total = (daysSum + personsSum)*4000;
         
-        if (restDays.value == '' || persons.value == '') {
+        if ( checkInput() ) {
             totatValue.textContent = 0;
         } else {
             let a = total;
@@ -26,7 +31,7 @@ function calc() {
         daysSum = +this.value;  
         total = (daysSum + personsSum)*4000;
         
-        if (persons.value == '' || restDays.value == '') {
+        if ( checkInput() ) {
             totatValue.textContent = 0;
             
         } else {
@@ -36,8 +41,8 @@ function calc() {
     });
 
     place.addEventListener('input', function() {
-        if(restDays.value == '' || persons.value == '') {
-            totatValue.textContent = total;
+        if( checkInput() ) {
+            totatValue.textContent = 0;
         } else {
             let a = total;
             totatValue.textContent = a * this.options[this.selectedIndex].value;       
