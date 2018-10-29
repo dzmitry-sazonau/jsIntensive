@@ -22,7 +22,6 @@ function tabs() {
 
     info.addEventListener('click', (event) => {
         let target = event.target;
-        console.log(target);
         if (target && target.classList.contains('info-header-tab')) {
             for( let i = 0; i < tab.length; i++) {
                 if (target == tab[i]) {

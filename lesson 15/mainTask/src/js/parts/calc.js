@@ -17,7 +17,8 @@ function calc() {
         if (restDays.value == '' || persons.value == '') {
             totatValue.textContent = 0;
         } else {
-            totatValue.textContent = total;
+            let a = total;
+            totatValue.textContent = a * place.options[place.selectedIndex].value;
         }
     });
 
@@ -27,17 +28,19 @@ function calc() {
         
         if (persons.value == '' || restDays.value == '') {
             totatValue.textContent = 0;
+            
         } else {
-            totatValue.textContent = total;
+            let a = total;
+            totatValue.textContent = a * place.options[place.selectedIndex].value;
         }
     });
 
-    place.addEventListener('change', function() {
+    place.addEventListener('input', function() {
         if(restDays.value == '' || persons.value == '') {
             totatValue.textContent = total;
         } else {
             let a = total;
-            totatValue.textContent = a * this.options[this.selectedIndex].value;
+            totatValue.textContent = a * this.options[this.selectedIndex].value;       
         }
     });
 }

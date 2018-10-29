@@ -36,13 +36,9 @@ function slider() {
     prev.addEventListener('click', function() {
         plusSlides(-1);
     });
-
+    
     next.addEventListener('click', function() {
         plusSlides(1);
-    });
-
-    next.addEventListener('mouseover', function() { 
-        console.log('jopa');
     });
 
     dotsWrap.addEventListener('click', function(event) {
