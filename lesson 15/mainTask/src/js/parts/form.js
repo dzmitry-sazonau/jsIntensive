@@ -65,8 +65,10 @@ function form() {
             postData(formData)
                 .then(() => statusMessage.textContent = message.loading)
                 .then(() => {
+                    if(overlay.style.display != 'none') {
+                        overlay.style.display = 'none';
+                    }
                     successModal.style.display = 'block';
-                    overlay.style.display = 'none';
                     status.textContent = '';
                 })
                 .catch(() => statusMessage.textContent = message.failure )
